@@ -1,0 +1,215 @@
+﻿@page "/Children/ChildList"
+@using childTracking.Blazor.Client.Models
+@using childTracking.Blazor.Client.GraphQLClient
+@inject NavigationManager NavigationManager
+
+<div class="container mt-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Danh sách trẻ em</h3>
+        <button class="btn btn-success" @onclick="AddNewChild">
+            <i class="oi oi-plus me-1"></i> Thêm mới
+        </button>
+    </div>
+
+    @if (isLoading)
+    {
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Đang tải...</span>
+            </div>
+        </div>
+    }
+    else if (children == null || children.Count == 0)
+    {
+        <div class="alert alert-info">
+            <p>Không có dữ liệu trẻ em. Vui lòng thêm mới để bắt đầu.</p>
+        </div>
+    }
+    else
+    {
+        <div class="mb-3">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Tìm kiếm theo tên..."
+                   @bind="searchTerm" @bind:event="oninput" />
+                <button class="btn btn-outline-secondary" @onclick="ApplyFilter">
+                    <i class="oi oi-magnifying-glass"></i> Tìm
+                </button>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Họ và tên</th>
+                        <th>Ngày sinh</th>
+                        <th>Giới tính</th>
+                        <th>Nhóm máu</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var child in filteredChildren)
+                    {
+                        <tr>
+                            <td>@child.FullName</td>
+                            <td>@child.DateOfBirth.ToShortDateString()</td>
+                            <td>@child.Gender</td>
+                            <td>@(string.IsNullOrEmpty(child.BloodType) ? "Chưa có" : child.BloodType)</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <button class="btn btn-sm btn-primary me-1" @onclick="() => ViewDetails(child.ChildId)">
+                                        <i class="oi oi-eye"></i> Chi tiết
+                                    </button>
+                                    <button class="btn btn-sm btn-warning me-1" @onclick="() => EditChild(child.ChildId)">
+                                        <i class="oi oi-pencil"></i> Sửa
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" @onclick="() => DeleteConfirm(child)">
+                                        <i class="oi oi-trash"></i> Xóa
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+    @if (showDeleteConfirm)
+    {
+        <div class="modal fade show" style="display: block;" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                        <h5 class="modal-title">Xác nhận xóa</h5>
+                        <button type="button" class="btn-close" @onclick="CancelDelete"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Bạn có chắc chắn muốn xóa thông tin trẻ <strong>@childToDelete?.FullName</strong>?</p>
+                        <p><small class="text-danger">Lưu ý: Hành động này không thể hoàn tác!</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" @onclick="CancelDelete">Hủy</button>
+                        <button type="button" class="btn btn-danger" @onclick="ConfirmDelete">Xóa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-backdrop fade show"></div>
+    }
+</div>
+
+@code {
+    private List<Child>? children;
+    private List<Child>? filteredChildren;
+    private bool isLoading = true;
+    private string searchTerm = "";
+    private bool showDeleteConfirm = false;
+    private Child? childToDelete;
+
+    // Khởi tạo GraphQLConsumer trực tiếp
+    private GraphQLConsumer _graphQLConsumer = new GraphQLConsumer();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadChildren();
+    }
+
+    private async Task LoadChildren()
+    {
+        isLoading = true;
+
+        try
+        {
+            // Lấy dữ liệu trực tiếp từ GraphQLConsumer
+            children = await _graphQLConsumer.GetAllChildren();
+            ApplyFilter();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Lỗi khi tải dữ liệu từ GraphQL: {ex.Message}");
+            children = new List<Child>();
+            filteredChildren = new List<Child>();
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private void ApplyFilter()
+    {
+        if (children == null)
+        {
+            filteredChildren = new List<Child>();
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            filteredChildren = children;
+        }
+        else
+        {
+            filteredChildren = children.Where(c =>
+                c.FullName != null &&
+                c.FullName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)
+            ).ToList();
+        }
+    }
+
+    private void ViewDetails(Guid childId)
+    {
+        NavigationManager.NavigateTo($"/Children/Details/{childId}");
+    }
+
+    private void AddNewChild()
+    {
+        NavigationManager.NavigateTo("/Children/Create");
+    }
+
+    private void EditChild(Guid childId)
+    {
+        NavigationManager.NavigateTo($"/Children/Edit/{childId}");
+    }
+
+    private void DeleteConfirm(Child child)
+    {
+        childToDelete = child;
+        showDeleteConfirm = true;
+    }
+
+    private void CancelDelete()
+    {
+        showDeleteConfirm = false;
+        childToDelete = null;
+    }
+
+    private async Task ConfirmDelete()
+    {
+        if (childToDelete != null)
+        {
+            try
+            {
+                // Sử dụng GraphQLConsumer trực tiếp để xóa
+                bool success = await _graphQLConsumer.DeleteChild(childToDelete.ChildId);
+
+                if (!success)
+                {
+                    Console.WriteLine("Xóa thất bại do lỗi từ GraphQL API");
+                }
+
+                // Tải lại dữ liệu sau khi xóa
+                await LoadChildren();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi xóa: {ex.Message}");
+            }
+        }
+
+        showDeleteConfirm = false;
+        childToDelete = null;
+    }
+}

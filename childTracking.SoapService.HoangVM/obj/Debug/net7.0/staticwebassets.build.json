@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "442RueRw0wyb7IWKj6c+8Y8D+EFqn0nmISWxvlnKz78=",
+  "Source": "childTracking.SoapService.HoangVM",
+  "BasePath": "_content/childTracking.SoapService.HoangVM",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
