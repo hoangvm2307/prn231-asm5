@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChildTracking.Services", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChildTracking.Repositories", "ChildTracking.Repositories\ChildTracking.Repositories.csproj", "{578511E9-4814-47A8-B59F-5872A2F124DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "childTracking.SoapService.HoangVM", "childTracking.SoapService.HoangVM\childTracking.SoapService.HoangVM.csproj", "{305CC89E-EAF0-4D70-993F-75C12EA1745E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "childTracking.SoapService.HoangVM", "childTracking.SoapService.HoangVM\childTracking.SoapService.HoangVM.csproj", "{305CC89E-EAF0-4D70-993F-75C12EA1745E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChildTracking.SoapService.MVC", "ChildTracking.SoapService.MVC\ChildTracking.SoapService.MVC.csproj", "{BEC9BFB0-E0BC-414D-BA64-D119A5C86FAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{305CC89E-EAF0-4D70-993F-75C12EA1745E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{305CC89E-EAF0-4D70-993F-75C12EA1745E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{305CC89E-EAF0-4D70-993F-75C12EA1745E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEC9BFB0-E0BC-414D-BA64-D119A5C86FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC9BFB0-E0BC-414D-BA64-D119A5C86FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC9BFB0-E0BC-414D-BA64-D119A5C86FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC9BFB0-E0BC-414D-BA64-D119A5C86FAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

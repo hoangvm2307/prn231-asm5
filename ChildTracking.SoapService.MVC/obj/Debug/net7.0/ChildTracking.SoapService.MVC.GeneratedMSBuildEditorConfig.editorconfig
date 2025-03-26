@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.SoapService.MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Learning/FPT Course/PRN231/SP25_NET1718_PRN231_ASM5_SE171062_HoangVM/ChildTracking.SoapService.MVC/Views/Child/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpbGRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/FPT Course/PRN231/SP25_NET1718_PRN231_ASM5_SE171062_HoangVM/ChildTracking.SoapService.MVC/Views/Child/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpbGRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/FPT Course/PRN231/SP25_NET1718_PRN231_ASM5_SE171062_HoangVM/ChildTracking.SoapService.MVC/Views/Child/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpbGRcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/FPT Course/PRN231/SP25_NET1718_PRN231_ASM5_SE171062_HoangVM/ChildTracking.SoapService.MVC/Views/Child/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpbGRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/FPT Course/PRN231/SP25_NET1718_PRN231_ASM5_SE171062_HoangVM/ChildTracking.SoapService.MVC/Views/Child/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpbGRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Learning/FPT Course/PRN231/SP25_NET1718_PRN231_ASM5_SE171062_HoangVM/ChildTracking.SoapService.MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

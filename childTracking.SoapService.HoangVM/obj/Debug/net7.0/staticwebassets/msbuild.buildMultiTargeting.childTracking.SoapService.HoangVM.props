@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\childTracking.SoapService.HoangVM.props" />
+</Project>

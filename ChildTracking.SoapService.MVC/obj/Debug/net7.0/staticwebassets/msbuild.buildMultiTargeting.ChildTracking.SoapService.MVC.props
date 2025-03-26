@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ChildTracking.SoapService.MVC.props" />
+</Project>

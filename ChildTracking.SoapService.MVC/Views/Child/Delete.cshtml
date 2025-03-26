@@ -1,0 +1,32 @@
+﻿@model ChildTracking.Repositories.Models.Child
+
+@{
+    ViewData["Title"] = "Xóa";
+}
+
+<h1>Xác nhận xóa</h1>
+
+<h3>Bạn có chắc chắn muốn xóa thông tin này?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Họ và tên</dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class="col-sm-3">Ngày sinh</dt>
+        <dd class="col-sm-9">
+            @Model.DateOfBirth.ToString("dd/MM/yyyy")
+        </dd>
+        <dt class="col-sm-3">Giới tính</dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ChildId" />
+        <input type="submit" value="Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+    </form>
+</div>

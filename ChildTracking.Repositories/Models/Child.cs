@@ -3,28 +3,43 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 
 namespace ChildTracking.Repositories.Models
 {
-    public partial class Child
+    [DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ChildTracking.Repositories.Models")]
+    public class Child
     {
-        public Child()
-        {
-            GrowthRecords = new HashSet<GrowthRecord>();
-        }
-
-        [Key]
+        [DataMember]
         public Guid ChildId { get; set; }
+
+        [DataMember]
         public Guid? UserId { get; set; }
+
+        [DataMember]
         public string FullName { get; set; }
+
+        [DataMember]
         public DateTime DateOfBirth { get; set; }
+
+        [DataMember]
         public string Gender { get; set; }
+
+        [DataMember]
         public string BloodType { get; set; }
+
+        [DataMember]
         public string MedicalConditions { get; set; }
+
+        [DataMember]
         public string Allergies { get; set; }
+
+        [DataMember]
         public string Notes { get; set; }
+
+        [DataMember]
         public DateTime? CreatedAt { get; set; }
 
-        public virtual ICollection<GrowthRecord> GrowthRecords { get; set; }
+        public ICollection<GrowthRecord> GrowthRecords { get; set; } = new List<GrowthRecord>();
     }
 }

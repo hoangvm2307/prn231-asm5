@@ -1,0 +1,82 @@
+﻿@model ChildTracking.Repositories.Models.Child
+
+@{
+    ViewData["Title"] = "Chi tiết";
+}
+
+<h1>Chi tiết thông tin trẻ em</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Họ và tên</dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class="col-sm-3">Ngày sinh</dt>
+        <dd class="col-sm-9">
+            @Model.DateOfBirth.ToString("dd/MM/yyyy")
+        </dd>
+        <dt class="col-sm-3">Giới tính</dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class="col-sm-3">Nhóm máu</dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.BloodType)
+        </dd>
+        <dt class="col-sm-3">Tình trạng sức khỏe</dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.MedicalConditions)
+        </dd>
+        <dt class="col-sm-3">Dị ứng</dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Allergies)
+        </dd>
+        <dt class="col-sm-3">Ghi chú</dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+        <dt class="col-sm-3">Ngày tạo</dt>
+        <dd class="col-sm-9">
+            @(Model.CreatedAt.HasValue ? Model.CreatedAt.Value.ToString("dd/MM/yyyy HH:mm") : "")
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ChildId" class="btn btn-primary">Chỉnh sửa</a> |
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</div>
+
+@if (Model.GrowthRecords != null && Model.GrowthRecords.Any())
+{
+    <hr />
+    <h3>Lịch sử đo sức khỏe</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ngày đo</th>
+                <th>Cân nặng (kg)</th>
+                <th>Chiều cao (cm)</th>
+                <th>BMI</th>
+                <th>Chu vi đầu (cm)</th>
+                <th>Người đo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.GrowthRecords.OrderByDescending(x => x.MeasurementDate))
+            {
+                <tr>
+                    <td>@item.MeasurementDate.ToString("dd/MM/yyyy")</td>
+                    <td>@item.Weight</td>
+                    <td>@item.Height</td>
+                    <td>@item.Bmi</td>
+                    <td>@item.HeadCircumference</td>
+                    <td>@item.MeasuredBy</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

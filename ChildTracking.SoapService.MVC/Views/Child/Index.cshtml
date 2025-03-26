@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ChildTracking.Repositories.Models.Child>
+
+@{
+    ViewData["Title"] = "Danh sách trẻ em";
+}
+
+<h1>Danh sách trẻ em</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Thêm mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Họ và tên</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính</th>
+            <th>Nhóm máu</th>
+            <th>Tình trạng sức khỏe</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BloodType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedicalConditions)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ChildId" class="btn btn-sm btn-primary">Sửa</a> |
+                    <a asp-action="Details" asp-route-id="@item.ChildId" class="btn btn-sm btn-info">Chi tiết</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ChildId" class="btn btn-sm btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

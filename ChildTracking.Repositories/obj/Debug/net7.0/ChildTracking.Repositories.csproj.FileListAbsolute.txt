@@ -12,3 +12,17 @@ D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM1_SE171062_HoangVM\ChildTra
 D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM1_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\ChildTracking.Repositories.pdb
 D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM1_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\ChildTracking.Repositories.genruntimeconfig.cache
 D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM1_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\ref\ChildTracking.Repositories.dll
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\bin\Debug\net7.0\ChildTracking.Repositories.deps.json
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\bin\Debug\net7.0\ChildTracking.Repositories.runtimeconfig.json
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\bin\Debug\net7.0\ChildTracking.Repositories.dll
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\bin\Debug\net7.0\ChildTracking.Repositories.pdb
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\ChildTracking.Repositories.csproj.AssemblyReference.cache
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\ChildTracking.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\ChildTracking.Repositories.AssemblyInfoInputs.cache
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\ChildTracking.Repositories.AssemblyInfo.cs
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\ChildTracking.Repositories.csproj.CoreCompileInputs.cache
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\ChildTracking.Repositories.dll
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\refint\ChildTracking.Repositories.dll
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\ChildTracking.Repositories.pdb
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\ChildTracking.Repositories.genruntimeconfig.cache
+D:\Learning\FPT Course\PRN231\SP25_NET1718_PRN231_ASM5_SE171062_HoangVM\ChildTracking.Repositories\obj\Debug\net7.0\ref\ChildTracking.Repositories.dll
